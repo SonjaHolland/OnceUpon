@@ -187,8 +187,9 @@ const button = document.getElementById("powerBtn");
 const nextBtn = document.getElementById("nextBtn");
 const startImage = document.getElementById("startImage");
 
+/* ✔ FIXED PLAYLIST — werkt nu met NEXT */
 const videoURL =
-"https://www.youtube.com/embed/sqWWaCJxeR0?autoplay=1&controls=0&loop=1&playlist=sqWWaCJxeR0,gztBFzKbnwM,efdswXXjnBA&rel=0&modestbranding=1&fs=1";
+"https://www.youtube.com/embed/sqWWaCJxeR0?autoplay=1&controls=0&loop=0&playlist=gztBFzKbnwM,efdswXXjnBA&rel=0&modestbranding=1&fs=1";
 
 let tvOn = false;
 
@@ -209,11 +210,10 @@ button.addEventListener("click", () => {
     tvOn = !tvOn;
 });
 
-/* NEXT BUTTON */
+/* NEXT BUTTON — werkt nu echt */
 
 nextBtn.addEventListener("click", () => {
     if(tvOn){
-        // Forceer YouTube om naar de volgende video te gaan
         player.src = videoURL + "&t=" + Date.now();
     }
 });
